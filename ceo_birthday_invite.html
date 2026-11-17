@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Birthday Invitation</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg1:#081434;--bg2:#2a1470;--gold:#FCBD1F;--pink:#F41F54;--lav:#CDC8F0;--ink:#fff;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%}
+body{font-family:Poppins,system-ui,sans-serif;color:var(--ink);background:radial-gradient(circle at 50% 25%,var(--bg2),var(--bg1) 72%);overflow:hidden;text-align:center}
+.st{position:fixed;width:3px;height:3px;border-radius:50%;background:#fff;animation:tw 2.5s infinite alternate}
+@keyframes tw{from{opacity:.1}to{opacity:.9}}
+.bl{position:fixed;bottom:-120px;width:44px;height:56px;border-radius:50% 50% 48% 48%;animation:up linear infinite;opacity:.9;z-index:1}
+.bl:after{content:"";position:absolute;top:56px;left:21px;width:1.5px;height:40px;background:rgba(255,255,255,.5)}
+@keyframes up{to{transform:translateY(-130vh) rotate(8deg)}}
+.s{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;padding:24px;gap:16px;opacity:0;pointer-events:none;transition:opacity .7s;overflow-y:auto;z-index:2}
+.s>:first-child{margin-top:auto}.s>:last-child{margin-bottom:auto}
+.s.on{opacity:1;pointer-events:auto}
+h1{font-size:clamp(32px,9.5vw,50px);line-height:1.12;font-weight:800}
+.g{color:var(--gold)}
+p{color:var(--lav);font-size:16px}
+button{font:700 18px Poppins,sans-serif;background:linear-gradient(135deg,#FCBD1F,#ff9a00);color:var(--bg1);border:0;border-radius:40px;padding:16px 34px;box-shadow:0 8px 30px rgba(252,189,31,.45);animation:pulse 1.5s infinite}
+@keyframes pulse{50%{transform:scale(1.07)}}
+.gift{font-size:100px;animation:bob 1.8s ease-in-out infinite;filter:drop-shadow(0 0 24px rgba(252,189,31,.6))}
+@keyframes bob{50%{transform:translateY(-14px) rotate(5deg)}}
+.cake{position:relative;width:240px;height:215px;margin-top:44px;flex:none}
+.pl{position:absolute;bottom:0;left:-20px;width:280px;height:14px;border-radius:8px;background:#d9d4f7}
+.l1{position:absolute;bottom:14px;left:0;width:240px;height:70px;border-radius:14px 14px 6px 6px;background:var(--pink)}
+.l2{position:absolute;bottom:84px;left:30px;width:180px;height:60px;border-radius:14px 14px 6px 6px;background:#fff}
+.l1:before,.l2:before{content:"";position:absolute;top:0;left:0;right:0;height:16px;border-radius:14px 14px 40px 40px;background:var(--gold)}
+.c{position:absolute;bottom:144px;width:12px;height:42px;border-radius:4px;background:var(--lav)}
+.c:nth-of-type(4){left:70px}.c:nth-of-type(5){left:114px}.c:nth-of-type(6){left:158px}
+.f{position:absolute;top:-28px;left:-2px;width:16px;height:28px;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;background:radial-gradient(#fff,var(--gold) 60%,#ff7a00);box-shadow:0 0 22px 8px rgba(252,189,31,.75);animation:fl .25s infinite alternate;transition:opacity .4s,transform .4s}
+@keyframes fl{to{transform:scale(1.12,.94) rotate(3deg)}}
+.out .f{opacity:0;transform:translateY(-14px) scale(.2)}
+.card{width:min(92vw,430px);padding:28px 22px;border-radius:28px;background:rgba(255,255,255,.09);border:1.5px solid rgba(252,189,31,.5);box-shadow:0 20px 60px rgba(0,0,0,.45),0 0 40px rgba(252,189,31,.15);backdrop-filter:blur(8px);display:flex;flex-direction:column;gap:11px;animation:rise .9s both;flex:none}
+@keyframes rise{from{transform:translateY(40px) scale(.94);opacity:0}}
+.pill{align-self:center;background:var(--pink);border-radius:30px;padding:6px 18px;font-weight:700;font-size:13px;letter-spacing:.08em}
+.hb{font-size:clamp(30px,9vw,40px);font-weight:800;line-height:1.1;background:linear-gradient(90deg,#FCBD1F,#fff,#FCBD1F);background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sh 2.5s linear infinite}
+@keyframes sh{to{background-position:200% center}}
+.rk{color:var(--gold);font-weight:700;font-size:15px}
+.nm{font-size:clamp(24px,7vw,32px);font-weight:800;line-height:1.15}
+.ti{color:var(--lav);font-size:14px;font-weight:500}
+.row{font-size:15px;color:#fff}
+.row small{display:block;color:var(--gold);font-size:12px;letter-spacing:.1em;font-weight:700}
+hr{border:0;height:2px;background:var(--gold);width:60px;align-self:center}
+.again{font-size:14px;padding:10px 22px;animation:none;align-self:center}
+canvas{position:fixed;inset:0;pointer-events:none;z-index:5}
+</style>
+</head>
+<body>
+<!-- EDIT THESE LINES -->
+<script>var RANK="Maj Gen (Retd)",NAME="Syed Hasnat Amir Gillani",HONOUR="HI (M)",TITLE="CEO, AKTI Rawalpindi",TIME="";</script>
+
+<div class="s on" id="a">
+  <div class="gift">🎁</div>
+  <h1>A <span class="g">special</span> invitation<br>is waiting for you</h1>
+  <button id="b1">Open Invitation</button>
+</div>
+
+<div class="s" id="b">
+  <h1>Make a <span class="g">wish</span> ✨</h1>
+  <div class="cake" id="cake">
+    <div class="pl"></div><div class="l1"></div><div class="l2"></div>
+    <div class="c"><div class="f"></div></div><div class="c"><div class="f"></div></div><div class="c"><div class="f"></div></div>
+  </div>
+  <button id="b2">Blow the Candles 🎂</button>
+</div>
+
+<div class="s" id="c">
+  <div class="card">
+    <div class="pill">YOU’RE INVITED</div>
+    <div class="hb">Happy Birthday!</div>
+    <p>Join us to celebrate the birthday of</p>
+    <div><div class="rk" id="rk"></div><div class="nm" id="nm"></div><div class="rk" id="ho"></div><div class="ti" id="ti"></div></div>
+    <hr>
+    <div class="row"><small>DATE</small>Tuesday, 17 November 2026</div>
+    <div class="row" id="tr" style="display:none"><small>TIME</small><span id="tm"></span></div>
+    <div class="row"><small>VENUE</small>Arfa Karim Technology Incubator<br>Regional Campus, Rawalpindi</div>
+    <hr>
+    <p>With warm wishes,<br><b style="color:#fff">Team AKTI</b></p>
+    <button class="again" id="b3">Celebrate again 🎉</button>
+  </div>
+</div>
+<canvas id="cv"></canvas>
+
+<script>
+var $=function(i){return document.getElementById(i)};
+$("rk").textContent=RANK;$("nm").textContent=NAME;$("ho").textContent=HONOUR;$("ti").textContent=TITLE;
+if(TIME){$("tm").textContent=TIME;$("tr").style.display="block"}
+var bc=["#F41F54","#FCBD1F","#4A3CBE","#22B8F0","#ff7ab6"];
+for(var i=0;i<40;i++){var s=document.createElement("div");s.className="st";s.style.left=Math.random()*100+"vw";s.style.top=Math.random()*100+"vh";s.style.animationDelay=Math.random()*2.5+"s";document.body.appendChild(s)}
+for(var j=0;j<12;j++){var b=document.createElement("div");b.className="bl";b.style.left=(j*8.5)+"vw";b.style.background=bc[j%5];b.style.animationDuration=(9+Math.random()*8)+"s";b.style.animationDelay=(-Math.random()*14)+"s";document.body.appendChild(b)}
+function show(i){["a","b","c"].forEach(function(k){$(k).classList.toggle("on",k===i)})}
+$("b1").onclick=function(){show("b")};
+var cv=$("cv"),x=cv.getContext("2d"),P=[];
+function sz(){cv.width=innerWidth;cv.height=innerHeight}sz();onresize=sz;
+function burst(px,py){
+  var cols=["#FCBD1F","#F41F54","#4A3CBE","#fff","#CDC8F0"];
+  for(var i=0;i<150;i++)P.push({x:px||cv.width/2,y:py||cv.height*.45,vx:(Math.random()-.5)*15,vy:-Math.random()*15-2,r:Math.random()*6+3,c:cols[i%5],a:Math.random()*6});
+}
+function loop(){
+  x.clearRect(0,0,cv.width,cv.height);
+  P.forEach(function(p){p.x+=p.vx;p.y+=p.vy;p.vy+=.25;p.a+=.2;x.fillStyle=p.c;x.save();x.translate(p.x,p.y);x.rotate(p.a);x.fillRect(-p.r,-p.r/2,p.r*2,p.r);x.restore()});
+  P=P.filter(function(p){return p.y<cv.height+20});
+  requestAnimationFrame(loop)
+}
+loop();
+function party(){burst(cv.width*.2,cv.height*.5);burst(cv.width*.8,cv.height*.5);setTimeout(burst,300)}
+$("b2").onclick=function(){
+  $("cake").classList.add("out");$("b2").style.display="none";
+  setTimeout(burst,350);setTimeout(function(){party();show("c")},1500);setTimeout(party,2800)
+};
+$("b3").onclick=party;
+</script>
+</body>
+</html>
